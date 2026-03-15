@@ -119,25 +119,25 @@ The modified approach removes the class token and computes the mean representati
 
 # Repository Structure
 
+# Repository Structure
+
 AI-Model-Architecture-Lab
-
-assets  
-CNN architecture with ResNet backbone.png  
-ViT architecture comparison_ pooling strategies.png  
-
-experiments  
-
-cnn-backbone-replacement  
-W1_OxfordPet_Standard_Cross_Entropy.ipynb  
-README.md  
-
-vit-representation  
-W1_Vision_Transformer.ipynb  
-README.md  
-
-README.md
-
----
+│
+├─ assets
+│   ├─ CNN architecture with ResNet backbone.png
+│   └─ ViT architecture comparison_ pooling strategies.png
+│
+├─ experiments
+│
+│   ├─ cnn-backbone-replacement
+│   │     ├─ W1_OxfordPet_Standard_Cross_Entropy.ipynb
+│   │     └─ README.md
+│   │
+│   └─ vit-representation
+│         ├─ W1_Vision_Transformer.ipynb
+│         └─ README.md
+│
+└─ README.md
 
 # Future Work
 
