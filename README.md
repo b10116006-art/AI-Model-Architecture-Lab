@@ -104,47 +104,53 @@ Original method:
 
 ```python
 x = x[:, 0]
+```
 
 Modified method:
 
+```python
 x = x[:, 1:, :]
 x = torch.mean(x, dim=1)
+```
 
 The modified approach removes the class token and computes the mean representation across all patch embeddings.
 
-Repository Structure
+---
+
+# Repository Structure
 
 AI-Model-Architecture-Lab
 
-assets
-CNN architecture with ResNet backbone.png
-ViT architecture comparison_ pooling strategies.png
+assets  
+CNN architecture with ResNet backbone.png  
+ViT architecture comparison_ pooling strategies.png  
 
-experiments
+experiments  
 
-cnn-backbone-replacement
-W1_OxfordPet_Standard_Cross_Entropy.ipynb
+cnn-backbone-replacement  
+W1_OxfordPet_Standard_Cross_Entropy.ipynb  
+README.md  
+
+vit-representation  
+W1_Vision_Transformer.ipynb  
+README.md  
+
 README.md
 
-vit-representation
-W1_Vision_Transformer.ipynb
-README.md
+---
 
-README.md
-
-Future Work
+# Future Work
 
 Future experiments may include:
 
-Vision Transformer attention visualization
+- Vision Transformer attention visualization
+- CNN vs Transformer performance comparison
+- Lightweight transformer architectures
+- Hybrid CNN–Transformer models
 
-CNN vs Transformer performance comparison
+---
 
-Lightweight transformer architectures
+# Author
 
-Hybrid CNN–Transformer models
-
-Author
-
-Po-Yun Chen
+Po-Yun Chen  
 AI × Semiconductor Engineer
