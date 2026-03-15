@@ -59,3 +59,20 @@ The experiment demonstrates that a smaller backbone can still achieve competitiv
 Backbone architecture plays a critical role in feature extraction.
 
 Even lightweight architectures like ResNet18 can produce strong feature representations for classification tasks.
+
+---
+
+## Results
+
+Validation Accuracy
+
+ResNet50: 0.9212  
+ResNet18: 0.9234
+
+---
+
+## Key Insight
+
+Replacing a larger backbone with a lighter architecture can still preserve strong classification performance.
+
+In this experiment, ResNet18 achieved comparable and slightly better validation accuracy while reducing model complexity and improving training efficiency.
