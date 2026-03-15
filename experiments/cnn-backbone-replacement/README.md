@@ -1,9 +1,61 @@
 # CNN Backbone Replacement Experiment
 
-This experiment evaluates whether replacing a large CNN backbone (ResNet50) with a smaller backbone (ResNet18) affects classification performance.
+## Objective
+This experiment investigates the effect of replacing the CNN backbone architecture.
 
-Dataset:
-Oxford Pet
+The original model used ResNet50 as the backbone.
+In this experiment, we replace it with ResNet18 and evaluate the classification performance.
 
-Goal:
-Understand how CNN backbone depth influences feature extraction and classification accuracy.
+---
+
+## Dataset
+
+Oxford-IIIT Pet Dataset
+
+This dataset contains images of cats and dogs across multiple breeds.
+
+---
+
+## Model Architecture
+
+CNN-based image classification model.
+
+Architecture:
+
+Input Image  
+↓  
+ResNet18 Backbone  
+↓  
+Global Average Pooling  
+↓  
+Fully Connected Classifier  
+↓  
+Prediction
+
+---
+
+## Modification
+
+Original backbone:
+ResNet50
+
+Modified backbone:
+ResNet18
+
+ResNet18 is a lighter architecture with fewer parameters and faster training time.
+
+---
+
+## Results
+
+Training completed successfully with stable convergence.
+
+The experiment demonstrates that a smaller backbone can still achieve competitive performance while reducing model complexity.
+
+---
+
+## Key Insight
+
+Backbone architecture plays a critical role in feature extraction.
+
+Even lightweight architectures like ResNet18 can produce strong feature representations for classification tasks.
