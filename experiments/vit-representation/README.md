@@ -33,3 +33,27 @@ Instead of using only the class token, we compute the average of all patch embed
 This modification allows the model to use information from every patch.
 
 Implementation:
+
+x = x[:, 1:, :]
+x = torch.mean(x, dim=1)
+
+
+---
+
+## Results
+
+Top-1 Accuracy
+
+0.3288 → 0.3670
+
+Top-5 Accuracy
+
+0.6074 → 0.6432
+
+---
+
+## Key Insight
+
+Averaging all patch embeddings provides a richer global representation compared to relying on a single class token.
+
+This suggests that information distributed across multiple patches can improve classification performance.
