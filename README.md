@@ -1,12 +1,10 @@
 # AI Model Architecture Lab
 
-Author: Po-Yun Chen
+This repository explores fundamental deep learning model architectures used in modern AI systems.
 
-This repository documents a series of deep learning experiments exploring how architectural changes influence model performance.
+The goal of this project is to experiment with different model design choices and understand how architectural modifications affect performance.
 
-Instead of only running course notebooks, this project focuses on **systematically modifying model architectures and analyzing experimental results**.
-
-The experiments cover two major model families used in modern computer vision:
+The experiments focus on:
 
 - Convolutional Neural Networks (CNN)
 - Vision Transformers (ViT)
@@ -15,86 +13,125 @@ The experiments cover two major model families used in modern computer vision:
 
 # Experiments
 
-This lab currently contains two architecture experiments.
+## 1. CNN Backbone Replacement
 
-| Experiment | Architecture | Dataset |
-|------|------|------|
-CNN Backbone Replacement | ResNet50 → ResNet18 | Oxford Pet |
-Vision Transformer Representation | Class Token vs Patch Mean | CIFAR100 |
+Experiment: Replace the CNN backbone architecture.
+
+Original backbone:
+
+ResNet50
+
+Modified backbone:
+
+ResNet18
+
+Dataset:
+
+Oxford-IIIT Pet Dataset
+
+Goal:
+
+Study how backbone size affects feature extraction and classification performance.
+
+Experiment folder:
+
+experiments/cnn-backbone-replacement
 
 ---
 
-# Experiment 1 — CNN Backbone Replacement
+## 2. Vision Transformer Representation Strategy
 
-Goal: Replace a large CNN backbone (ResNet50) with a smaller backbone (ResNet18) and evaluate performance differences.
-
-Result:
-
-| Model | Validation Accuracy |
-|------|------|
-ResNet50 | 0.9212 |
-ResNet18 | 0.9234 |
-
-Observation:
-
-ResNet18 achieved comparable accuracy despite having significantly fewer parameters, suggesting that smaller backbones can still extract sufficient visual features for certain tasks.
-
----
-
-# Experiment 2 — Vision Transformer Representation Strategy
-
-Goal: Evaluate different image representation strategies in Vision Transformers.
+Experiment: Compare two token aggregation strategies in Vision Transformers.
 
 Original method:
-x = x[:,0]
 
+Class Token Representation
 
 Modified method:
 
+Patch Mean Pooling
 
-x = x[:,1:,:]
-x = torch.mean(x, dim=1)
+Dataset:
 
+CIFAR100
 
-Result:
+Goal:
 
-| Representation | Top-1 | Top-5 |
-|------|------|------|
-Class Token | 0.3288 | 0.6074 |
-Patch Mean | 0.3670 | 0.6432 |
+Investigate whether averaging all patch embeddings provides better global representation than relying on the class token.
 
-Observation:
+Experiment folder:
 
-Aggregating patch embeddings improved classification accuracy, suggesting that combining information from all image patches can produce a richer representation than relying solely on the class token.
+experiments/vit-representation
 
 ---
 
-# Skills Demonstrated
+# CNN Architecture
 
-- PyTorch model modification
-- CNN backbone replacement
-- classifier head adaptation
-- Vision Transformer architecture understanding
-- representation learning strategies
-- experimental comparison and analysis
+![CNN Architecture](assets/CNN architecture with ResNet backbone.png)
+
+This architecture uses a ResNet backbone to extract visual features from images.
+
+Pipeline:
+
+Input Image  
+↓  
+ResNet18 Backbone  
+↓  
+Global Average Pooling  
+↓  
+Fully Connected Classifier  
+↓  
+Prediction
+
+---
+
+# Vision Transformer Architecture
+
+![ViT Architecture](assets/ViT architecture comparison_ pooling strategies.png)
+
+Vision Transformers split images into patches and process them as token sequences using a Transformer encoder.
+
+Two representation strategies are compared:
+
+• Class Token  
+• Patch Mean Pooling
+
+---
+
+# Repository Structure
+
+AI-Model-Architecture-Lab  
+│  
+├─ assets  
+│   ├─ CNN architecture with ResNet backbone.png  
+│   └─ ViT architecture comparison_ pooling strategies.png  
+│  
+├─ experiments  
+│  
+│   ├─ cnn-backbone-replacement  
+│   │     ├─ notebook.ipynb  
+│   │     └─ README.md  
+│   │  
+│   └─ vit-representation  
+│         ├─ notebook.ipynb  
+│         └─ README.md  
+│  
+└─ README.md  
 
 ---
 
 # Future Work
 
-## CNN Architecture
-
-![CNN Architecture](assets/CNN architecture with ResNet backbone.png)
-
----
-
-## Vision Transformer Architecture
-
-![ViT Architecture](assets/ViT architecture comparison_ pooling strategies.png)
-
 Future experiments may include:
 
 - Vision Transformer attention visualization
 - CNN vs Transformer performance comparison
-- lightweight transformer architectures
-- hybrid CNN–Transformer models
+- Lightweight transformer architectures
+- Hybrid CNN–Transformer models
+
+---
+
+# Author
+
+Po-Yun Chen  
+AI × Semiconductor Engineer
