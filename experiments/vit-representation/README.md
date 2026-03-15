@@ -1,12 +1,27 @@
 # Vision Transformer Representation Experiment
 
-This experiment compares two representation strategies in Vision Transformers.
+## Objective
 
-1. Class Token
-2. Patch Embedding Mean
+This experiment investigates how different token aggregation strategies affect classification performance in Vision Transformers.
 
-Dataset:
+---
+
+## Dataset
+
 CIFAR100
 
-Goal:
-Investigate how different representation strategies influence classification performance.
+---
+
+## Original Method
+
+Class Token Representation
+
+In the original Vision Transformer architecture, the [CLS] token is used as the representation of the entire image.
+
+---
+
+## Modified Method
+
+Patch Mean Pooling
+
+Instead of using the class token, we compute the average of all patch embeddings.
