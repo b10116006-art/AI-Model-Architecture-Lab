@@ -82,6 +82,16 @@ Aggregating patch embeddings improved classification accuracy, suggesting that c
 
 # Future Work
 
+## CNN Architecture
+
+![CNN Architecture](assets/CNN architecture with ResNet backbone.png)
+
+---
+
+## Vision Transformer Architecture
+
+![ViT Architecture](assets/ViT architecture comparison_ pooling strategies.png)
+
 Future experiments may include:
 
 - Vision Transformer attention visualization
